@@ -1,0 +1,63 @@
+kf:
+  var_groups: [['pos','vel']]
+  general:
+    Delta: 20
+    tau_prime: 13 # KF doesn't use this directly, but necessary for R2 to be computed based on same time samples as other methods
+    steady_state: True
+  opt:
+    lag: [40,160]
+    init_points: 10
+    n_iter: 10
+    kappa: 10
+    val_frac: 0.2
+  pos-vel:
+    lag: 40
+wf:
+  var_groups: ['vel']
+  general:
+    Delta: 20
+    tau_prime: 13
+  opt:
+    lam: [0,2000]
+    init_points: 10
+    n_iter: 10
+    kappa: 10
+    val_frac: 0.2
+  vel:
+    lam: 320
+ffn:
+  var_groups: ['vel']
+  general:
+    Delta: 20
+    tau_prime: 13
+  opt:
+    num_units: [50,600]
+    num_layers: [1,10]
+    frac_dropout: [0,0.5]
+    num_epochs: [2,30]
+    init_points: 10
+    n_iter: 10
+    kappa: 10
+    val_frac: 0.2
+  vel:
+    num_units: 460
+    num_layers: 4
+    frac_dropout: 0.02
+    num_epochs: 14
+gru:
+  var_groups: ['vel']
+  general:
+    Delta: 20
+    tau_prime: 13
+  opt:
+    num_units: [50,600]
+    frac_dropout: [0,0.5]
+    num_epochs: [2,30]
+    init_points: 10
+    n_iter: 10
+    kappa: 10
+    val_frac: 0.2
+  vel:
+    num_units: 580
+    frac_dropout: 0.06
+    num_epochs: 12

@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+area2_bump.pickle filter=lfs diff=lfs merge=lfs -text
+mc_maze.pickle filter=lfs diff=lfs merge=lfs -text
+mc_rtt.pickle filter=lfs diff=lfs merge=lfs -text

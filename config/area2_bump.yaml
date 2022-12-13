@@ -1,0 +1,129 @@
+kf:
+  var_groups: [['pos','vel']]
+  general:
+    Delta: 20
+    tau_prime: 11 # KF doesn't use this directly, but necessary for R2 to be computed based on same time samples as other methods
+    steady_state: True
+  opt:
+    lag: [0,1]
+    init_points: 10
+    n_iter: 10
+    kappa: 10
+    val_frac: 0.2
+  pos-vel:
+    lag: 0
+wf:
+  var_groups: ['pos','vel','force','joint_ang','joint_vel','muscle_len','muscle_vel']
+  general:
+    Delta: 20
+    tau_prime: 11
+  opt:
+    lam: [0,2000]
+    init_points: 10
+    n_iter: 10
+    kappa: 10
+    val_frac: 0.2
+  pos:
+    lam: 60
+  vel:
+    lam: 250
+  force:
+    lam: 70
+  joint_ang:
+    lam: 0
+  joint_vel:
+    lam: 740
+  muscle_len:
+    lam: 0
+  muscle_vel:
+    lam: 530
+ffn:
+  var_groups: ['pos','vel','force','joint_ang','joint_vel','muscle_len','muscle_vel']
+  general:
+    Delta: 20
+    tau_prime: 11
+  opt:
+    num_units: [50,600]
+    num_layers: [1,10]
+    frac_dropout: [0,0.5]
+    num_epochs: [2,100]
+    init_points: 10
+    n_iter: 10
+    kappa: 10
+    val_frac: 0.2
+  pos:
+    num_units: 540
+    num_layers: 6
+    frac_dropout: 0.25
+    num_epochs: 34
+  vel:
+    num_units: 490
+    num_layers: 10
+    frac_dropout: 0
+    num_epochs: 100
+  force:
+    num_units: 440
+    num_layers: 4
+    frac_dropout: 0.13
+    num_epochs: 48
+  joint_ang:
+    num_units: 590
+    num_layers: 5
+    frac_dropout: 0.02
+    num_epochs: 40
+  joint_vel:
+    num_units: 180
+    num_layers: 2
+    frac_dropout: 0.49
+    num_epochs: 3
+  muscle_len:
+    num_units: 330
+    num_layers: 9
+    frac_dropout: 0.06
+    num_epochs: 84
+  muscle_vel:
+    num_units: 370
+    num_layers: 9
+    frac_dropout: 0.16
+    num_epochs: 23
+gru:
+  var_groups: ['pos','vel','force','joint_ang','joint_vel','muscle_len','muscle_vel']
+  general:
+    Delta: 20
+    tau_prime: 11
+  opt:
+    num_units: [50,600]
+    frac_dropout: [0,0.5]
+    num_epochs: [2,30]
+    init_points: 10
+    n_iter: 10
+    kappa: 10
+    val_frac: 0.2
+  pos:
+    num_units: 590
+    frac_dropout: 0.31
+    num_epochs: 16
+  vel:
+    num_units: 300
+    frac_dropout: 0.46
+    num_epochs: 19
+  force:
+    num_units: 180
+    frac_dropout: 0.20
+    num_epochs: 11
+  joint_ang:
+    num_units: 590
+    frac_dropout: 0.42
+    num_epochs: 24
+  joint_vel:
+    num_units: 410
+    frac_dropout: 0.49
+    num_epochs: 19
+  muscle_len:
+    num_units: 60
+    frac_dropout: 0.23
+    num_epochs: 27
+  muscle_vel:
+    num_units: 100
+    frac_dropout: 0.40
+    num_epochs: 16
