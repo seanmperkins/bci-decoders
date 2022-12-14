@@ -5,20 +5,35 @@ This repository benchmarks four common neural decode algorithms (Kalman Filter, 
 
 # Setup
 
-[Install Python 3.7](https://www.python.org/downloads/), create a virtual environment, activate the virtual environment, and install the dependencies listed in `requirements.txt`.
+Install [Python 3.7](https://www.python.org/downloads/) to ensure compatibility with all code dependencies.
 
-This can be achieved by running the following commands where `<path_to_python3.7>` points to the location where Python 3.7 is installed and `<path_to_virtual_environment>` points to where you'd like to store the virtual environment.
+Install [Git LFS](https://git-lfs.github.com/) to enable access to the data files. The data files exceed GitHub's 100 MB limit and therefore can't be directly stored in the repository. Instead, Git LFS creates pointers to these files and stores the pointers in the repository. Git LFS is necessary for replacing these pointers with the actual data files when the repository gets cloned.
 
+Initialize Git LFS in the terminal by running:
+```
+git lfs install
+```
+Then, clone this repository:
+```
+git clone https://github.com/seanmperkins/bci-decoders.git <destination_dir>
+```
+where `<destination_dir>` is the location you wish to clone to. It is important that the repository be cloned rather than downloaded directly as a zip file. The zip file won't use Git LFS to access the correct data files.
+
+Next, create a virtual environment using Python 3.7 and activate it:
 ```
 <path_to_python3.7> -m venv <path_to_virtual_environment>
 ```
 ```
 source <path_to_virtual_environment>/bin/activate
 ```
+where `<path_to_python3.7>` points to the location where Python 3.7 is installed and `<path_to_virtual_environment>` points to where you'd like to store the virtual environment.
+
+Finally, install all necessary dependencies in the virtual environment by running:
 ```
 pip install -r requirements.txt
 ```
-All the code in this package should be run in the virtual environment.
+
+The code in this repository will now run in the virtual environment.
 
 # Usage
 The notebook `run_decoders.ipynb` contains commented example code for training each neural decoder, testing on a held-out test set, and visualizing the results of each run. A few settings can be configured directly in the notebook, but most settings, hyperparameters, and details related to hyperparameter optimization can be found in data-set-specific config files. More information on how to use the config files can be found on a separate [config README](config/) page.

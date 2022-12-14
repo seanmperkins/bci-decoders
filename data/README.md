@@ -61,6 +61,3 @@ This data set contains neural recordings from M1 while a monkey makes self-paced
 
 ### Attribution
 This data was provided to the Neural Latents Benchmark by Joseph O'Doherty and Philip Sabes at the University of California San Francisco. The full data set is available on [DANDI](https://dandiarchive.org/dandiset/000129) and more information about the data can be found in the journal article [Makin et al. 2018](https://iopscience.iop.org/article/10.1088/1741-2552/aa9e95).
-
-# Data Storage
-The .pickle files exceed GitHub's 100 MB file size limit. As a workaround, pointers to the data files are tracked in this repository using Git Large File Storage.
