@@ -5,11 +5,20 @@ This repository benchmarks four common neural decode algorithms (Kalman Filter, 
 
 # Setup
 
-To install dependencies, create a virtual environment with Python 3.7.10 and run:
+[Install Python 3.7](https://www.python.org/downloads/), create a virtual environment, activate the virtual environment, and install the dependencies listed in `requirements.txt`.
 
+This can be achieved by running the following commands where `<path_to_python3.7>` points to the location where Python 3.7 is installed and `<path_to_virtual_environment>` points to where you'd like to store the virtual environment.
+
+```
+<path_to_python3.7> -m venv <path_to_virtual_environment>
+```
+```
+source <path_to_virtual_environment>/bin/activate
+```
 ```
 pip install -r requirements.txt
 ```
+All the code in this package should be run in the virtual environment.
 
 # Usage
 The notebook `run_decoders.ipynb` contains commented example code for training each neural decoder, testing on a held-out test set, and visualizing the results of each run. A few settings can be configured directly in the notebook, but most settings, hyperparameters, and details related to hyperparameter optimization can be found in data-set-specific config files. More information on how to use the config files can be found on a separate [config README](config/) page.
