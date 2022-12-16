@@ -1,7 +1,7 @@
 # Brain-Computer Interface Decoders
 Brain-computer interfaces (BCIs) encompass a class of technologies that allow the brain to interact with external devices. BCIs can utilize a variety of neural recording modalities and may be focused on control (e.g., moving a prosthetic arm by decoding neural activity) or feedback (e.g., restoring lost sense of touch by injecting current into the brain). This code package focuses on a specific niche of BCIs: decoding intended movement based on invasive neural recordings that include individual action potentials ('spikes'). The goal is to develop statistical techniques ('decoders') for accurately and causally predicting movement variables (e.g., x- and y-velocity of the arm) based solely on recorded spike times from a collection of neurons.
 
-This repository benchmarks four common neural decode algorithms (Kalman Filter, Wiener Filter, Feedforward Neural Network, and GRU) for offline decoding on three data sets involving motion of a monkey's arm (two data sets with recordings from the motor cortex, and one data set with recordings from the somatosensory cortex). Detailed information on the data sets can be found on a separate [data README](data/) page. My hope is that this package will make it easier for others to benchmark their own algorithms against the decoders presented here. The repository can also serve as a resource for new researchers familiarizing themselves with neural decoding. 
+This repository benchmarks four common neural decode algorithms (Kalman Filter, Wiener Filter, Feedforward Neural Network, and GRU) for offline decoding on three data sets involving motion of a monkey's arm (two data sets with recordings from the motor cortex, and one data set with recordings from the somatosensory cortex). Detailed information on the data sets can be found on a separate [data README](data/) page. My hope is that this package will make it easier for others to benchmark their own algorithms against the decoders presented here. The repository can also serve as a resource for new researchers familiarizing themselves with neural decoding.
 
 # Setup
 
@@ -28,7 +28,7 @@ source <path_to_virtual_environment>/bin/activate
 ```
 where `<path_to_python3.7>` points to the location where Python 3.7 is installed and `<path_to_virtual_environment>` points to where you'd like to store the virtual environment.
 
-Finally, install all necessary dependencies in the virtual environment by running:
+Finally, install all necessary dependencies in the virtual environment by navigating to the top-level directory of this repository and running:
 ```
 pip install -r requirements.txt
 ```
