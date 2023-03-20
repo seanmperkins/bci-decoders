@@ -48,7 +48,7 @@ There are 108 conditions in this data set: 36 maze configurations with 3 variant
 `vel`: x- and y-velocity of the monkey's hand (mm/s)
 
 ### Attribution
-This data was provided to the Neural Latents Benchmark by Krishna Shenoy, Mark Churchland, and Matt Kaufman at Stanford University. The full data set is available on [DANDI](https://dandiarchive.org/dandiset/000128) and more information about the data can be found in the journal article [Churchland et al. 2010](https://pubmed.ncbi.nlm.nih.gov/21040842/).
+This data was provided to the Neural Latents Benchmark by Matt Kaufman, Mark Churchland, and Krishna Shenoy at Stanford University. The full data set is available on [DANDI](https://dandiarchive.org/dandiset/000128) and more information about the data can be found in the journal article [Churchland et al. 2010](https://pubmed.ncbi.nlm.nih.gov/21040842/).
 
 ## MC_RTT
 This data set contains neural recordings from M1 while a monkey makes self-paced reaches to random targets in an 8x8 grid. There is no condition structure in the data set. For the Neural Latents Benchmark, the session was broken up into 600 ms trials, with no particular alignment relative to movement on a given trial. The 1076 trials provided here have an additional 279 ms of data prepended to each trial. This is provided to allow causal decoders access to a reasonably long history such that causal estimates can generate predictions over the 600 ms period. For example, if decoding based on a trailing history of 280 ms, one could not generate a decode for the first 279 ms of each trial, but all subsequent samples in the trial would receive a prediction. 
